@@ -317,7 +317,7 @@ You are an experienced Java developer. I will show you a code fragment, and you 
 ```
 
 ## References
-[1] Roland Croft, Muhammad Ali Babar, and M. Mehdi Kholoosi. 2023. Data Quality for Software Vulnerability Datasets. CoRR abs/2301.05456 (2023). https://doi.org/10.48550/arXiv.2301.05456 arXiv:2301.05456
+[1] Roland Croft, Muhammad Ali Babar, and M. Mehdi Kholoosi. 2023. Data Quality for Software Vulnerability Datasets. In 45th IEEE/ACM International Conference on Software Engineering, ICSE 2023, Melbourne, Australia, May 14-20, 2023. IEEE, 21–133. https://doi.org/10.1109/ICSE48619.2023.00022
 
 [2] 2008. ISO/IEC 25012:2008 - Systems and software engineering – Software product Quality Requirements and Evaluation (SQuaRE) – Data quality model. International Organization for Standardization. https://www.iso.org/standard/35736.html
 
