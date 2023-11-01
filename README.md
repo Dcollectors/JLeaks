@@ -147,7 +147,7 @@ nohup dotnet run DuplicateCodeDetector.csproj --key-jaccard-threshold=0.7 --jacc
 nohup dotnet run DuplicateCodeDetector.csproj --key-jaccard-threshold=0.7 --jaccard-threshold=0.7 --dir=../../dataset/DroidLeaks/bug_method_gz > ../../dataset/DroidLeaks/uniqueness_method.log 2>&1 &
 ```
 
-Notably, if "Finished looking for duplicates " appears at the end of both two files "./quality/dataset/JLeaks/uniqueness_method.log" and "./quality/dataset/DroidLeaks/uniqueness_method.log", which means the detections of duplication have done. Then run:
+**_Notably, if "Finished looking for duplicates " appears at the end of both two files "./quality/dataset/JLeaks/uniqueness_method.log" and "./quality/dataset/DroidLeaks/uniqueness_method.log", which means the detections of duplication have done. Then run:_**
 
 ```
 cd ..
