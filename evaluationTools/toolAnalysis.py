@@ -209,7 +209,8 @@ for row in sheet.iter_rows(min_row=2,values_only=True):
         infer_file_path = f"{infer_output_dir}/{project_path}/report.json"
         result_infer = process_json_file_infer(infer_file_path,class_name,method_name)
         #print("Infer result:",result_infer)
-        infer_num += 1
+        if result_infer != "Infer running failed!":
+            infer_num += 1
         if result_infer == "Success":
             infer_success_num += 1
 
