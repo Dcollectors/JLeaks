@@ -90,7 +90,7 @@ third-party libraries   | third-party libraries related to defects
 is inter-procedural     | whether the resource leak is inter-procedural or not
 key variable name       | the name of the key variable that holds the system resource
 key variable location   | the location of key variable, such as "src/main/java/org/sql2o/Query.java:413"
-key variable attribute  | the attribute of key variable, which is one of **`anonymous variable`**, **`local variable`**, **`parameter`**, and **`instance variable`**
+key variable attribute  | the attribute of key variable, which is one of **`anonymous variable`**, **`local variable`**, **`parameter`**, **`class variable`**, and **`instance variable`**
 defect file hash        | hash value of defect file, using which you can get the defect source file in JavaFile.zip, and the defect bytecode file in ClassFile.zip
 fix file hash           | hash value of fix file, using which you can get the fix source file in JavaFile.zip
 defect file url         | url to download defect file
