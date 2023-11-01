@@ -49,7 +49,7 @@ Notably, JLeaks is a repository of resource leaks that facilitates in-depth rese
 │           ├─ JLeaks_fix_method.zip
 │           ├─ JLeaks.csv
 └─ evaluationTools                // evaluate PMD, Infer and SpotBugs based on JLeaks
-    ├─ analysis
+    ├─ file
     │  ├─ data-tool.xlsx          // Save tool result for each defect
     │  ├─ pmd_resource_leak.xml   // the custom PMD rule file        
     │  ├─ spotbugs_filterFile.xml // the custom SpotBugs filter file      
@@ -280,15 +280,15 @@ Before starting, please make sure **`./evaluationTools/tool_analysis_data.zip`**
 cd ./evaluationTools
 unzip -n toolResult.zip
 ```
-SpotBugs output directory is 'toolResult/output-spotbugs'. Infer output directory is 'toolResult/output-infer'. PMD output directory is 'toolResult/output-pmd'
+SpotBugs output directory is './evaluationTools/toolResult/output-spotbugs'. Infer output directory is './evaluationTools/toolResult/output-infer'. PMD output directory is './evaluationTools/toolResult/output-pmd'
 
 ```
 python toolAnalysis.py
 ```
-you can see the results of each tool in the "Result" workbook of the "data-tool.xlsx" file. In addition, after the "toolAnalysis.py" file is completed, you can see the accuracy of each tool on the console.
+you can see the results of each tool in the "Result" workbook of the "./evaluationTools/file/data-tool.xlsx" file. In addition, after the "toolAnalysis.py" file is completed, you can see the accuracy of each tool on the console.
 
 
-## Evaluation of GPT-3.5
+## Evaluation of ChatGPT
 
 ### Prompt for commits classification ###
 We randomly select 100 commits and relabel them to determine their relevance to resources, creating the test set. The prompt is mainly composed of various elements, including a task description, resource explanation, typical scenario illustration, sample code fragments, and the expected output. The prompt is as follows:
@@ -311,7 +311,7 @@ Code10:try {final InputStream ins = res.openRawResource(resourceId);scanner = ne
 In the prompt, 10 examples are randomly selected from JLeaks.
 
 ### Prompt for defect detection
-We used 299 defect cases and 299 non-defect cases randomly selected from JLeaks to evaluate the ability of GPT-3.5. The prompt is as follows:
+We used 299 defect cases and 299 non-defect cases randomly selected from JLeaks to evaluate the ability of ChatGPT. The prompt is as follows:
 ```
 You are an experienced Java developer. I will show you a code fragment, and you need to check whether the code has resource leak defect related to file, socket, database or thread. Your output should be a json which contains 1 field: result. The value of result can be 1 or 0. 1 means you are very certain that the code has resource leak defects about file, socket, database connection or thread, 0 means you are very certain that the code do not have resource leak defects related to file, socket, database connection or thread.
 ```
