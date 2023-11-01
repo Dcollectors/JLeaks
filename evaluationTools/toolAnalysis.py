@@ -74,7 +74,7 @@ def process_xml_file_spotbugs(xml_file, class_name, method_name):
 
 # Determine whether Infer has detected resource leak
 def process_json_file_infer(file_path, class_name, method_name):
-    result = "Failed"
+    result = "Don't detect any resource leak defect in defect file!"
     if not os.path.exists(file_path):
         result="Infer running failed!"
     else:
@@ -161,6 +161,8 @@ if sheet_name not in workbook.sheetnames:
     worksheet1.append(title)
 else:
     worksheet1 = workbook[sheet_name]
+    worksheet1.delete_rows(2, worksheet1.max_row)
+
 
 pmd_num = 0
 pmd_success_num = 0
@@ -171,7 +173,7 @@ infer_success_num = 0
 
 # Get the item content in the Excel file, and run the tools to obtain the  result
 for row in sheet.iter_rows(min_row=2,values_only=True):
-    id = row[0]
+    ID = str(row[0])
     repository_name = row[1]
     defect_version = row[2]
     fix_version = row[3]
@@ -182,13 +184,14 @@ for row in sheet.iter_rows(min_row=2,values_only=True):
     flag=row[8]
     flag2=row[9]
 
-    print(f"{repository_name}->{defect_version} is processing")
+    print(f"{ID}->{repository_name}->{defect_version} is processing")
 
     file_path,file_name = split_change_line(change_line)
     project_name = repository_name.split('/')[-1]
 
     project_path = project_name + "-" + defect_version
-    file_name_hash = project_name + "-" + defect_version + "-" + defect_hash
+    # file_name_hash = project_name + "-" + defect_version + "-" + defect_hash
+    file_name_hash = f"bug-{ID}-{defect_hash}"
     
     class_name = file_name.split(".")[0]
     
@@ -221,7 +224,7 @@ for row in sheet.iter_rows(min_row=2,values_only=True):
     if result_pmd == "Success":
         pmd_success_num += 1
 
-    item_info = [id,repository_name,defect_version,fix_version,defect_hash,fix_hash,result_spotbugs,result_infer,result_pmd]
+    item_info = [ID,repository_name,defect_version,fix_version,defect_hash,fix_hash,result_spotbugs,result_infer,result_pmd]
     worksheet1.append(item_info)
     workbook.save('file/data-tool.xlsx')
 
