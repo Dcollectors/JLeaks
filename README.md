@@ -230,7 +230,7 @@ python currency.py measure DroidLeaks
 
 
 ## Evaluation of defect detection tools using JLeaks
-We evaluated three open-source tools (PMD[5], Infer[6], SpotBugs[7]) of defect detection using JLeaks. xxxx.xlsx shows the results of there three tools. 
+We evaluated three open-source tools (PMD[5], Infer[6], SpotBugs[7]) of defect detection using JLeaks.
 
 ### Requirements
   - PMD 7.0.0-rc4
@@ -275,7 +275,7 @@ infer run -o {infer_output_dir}/{project_name} -- gradle build -w -x test --buil
 
 After running the tool to obtain the detection results, it is necessary to analyze and match the result file to determine whether it is consistent with the information we annotated, that is, whether the resource leak defect can be correctly detected in the method.
 
-Before starting, please make sure **`./evaluationTools/tool_analysis_data.zip`** exists.
+Before starting, please make sure **`./evaluationTools/toolResult.zip`** exists.
 ```
 cd ./evaluationTools
 unzip -n toolResult.zip
