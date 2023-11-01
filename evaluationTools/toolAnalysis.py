@@ -200,7 +200,7 @@ for row in sheet.iter_rows(min_row=2,values_only=True):
         filter_xml_spotbugs(file_name_hash)
         xml_file_path = f'{spotbugs_output_dir}/filter/{file_name_hash}_filtered.xml'
         result_spotbugs = process_xml_file_spotbugs(xml_file_path, class_name, method_name)
-        print("Spotbugs result:",result_spotbugs)
+        #print("Spotbugs result:",result_spotbugs)
         spotbugs_num += 1
         if result_spotbugs == "Success":
             spotbugs_success_num += 1
@@ -208,14 +208,14 @@ for row in sheet.iter_rows(min_row=2,values_only=True):
     if flag in [2,3,4]:
         infer_file_path = f"{infer_output_dir}/{project_path}/report.json"
         result_infer = process_json_file_infer(infer_file_path,class_name,method_name)
-        print("Infer result:",result_infer)
+        #print("Infer result:",result_infer)
         infer_num += 1
         if result_infer == "Success":
             infer_success_num += 1
 
     pmd_file_path = f"{pmd_output_dir}/{file_name_hash}.xml"
     result_pmd = process_xmlfile_pmd(pmd_file_path,method_name)
-    print("PMD result:",result_pmd)
+    #print("PMD result:",result_pmd)
     pmd_num += 1
     if result_pmd == "Success":
         pmd_success_num += 1
