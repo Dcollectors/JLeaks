@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = DuplicateCodeDetector
+build_property.ProjectDir = /mnt/disk3/lty/JLeaks/githubcode/quality/analysis/DuplicateCodeDetector/
