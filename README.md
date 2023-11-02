@@ -147,7 +147,7 @@ nohup dotnet run DuplicateCodeDetector.csproj --key-jaccard-threshold=0.7 --jacc
 nohup dotnet run DuplicateCodeDetector.csproj --key-jaccard-threshold=0.7 --jaccard-threshold=0.7 --dir=../../dataset/DroidLeaks/bug_method_gz > ../../dataset/DroidLeaks/uniqueness_method.log 2>&1 &
 ```
 
-**_Notably, if "Finished looking for duplicates " appears at the end of both two files "./quality/dataset/JLeaks/uniqueness_method.log" and "./quality/dataset/DroidLeaks/uniqueness_method.log", which means the detections of duplication have done. Then run:_**
+**_Notably, this process will take several minutes, possibly dozens. Kindly wait patiently during this time. if "Finished looking for duplicates " appears at the end of both two files "./quality/dataset/JLeaks/uniqueness_method.log" and "./quality/dataset/DroidLeaks/uniqueness_method.log", which means the detections of duplication have done. Then run:_**
 
 ```
 cd ..
@@ -196,7 +196,7 @@ nohup dotnet run DuplicateCodeDetector.csproj --key-jaccard-threshold=0.95 --jac
 
 nohup dotnet run DuplicateCodeDetector.csproj --key-jaccard-threshold=0.95 --jaccard-threshold=0.95 --dir=../../dataset/DroidLeaks/all_method_gz > ../../dataset/DroidLeaks/all_method.log 2>&1 &
 ```
-**_Notably, if "Finished looking for duplicates " appears at the end of both two files "./quality/dataset/JLeaks/all_method.log" and "./quality/dataset/DroidLeaks/all_method.log", which means the detections of duplication have done. Then run:_**
+**_Notably, this process will take several minutes, possibly dozens. Kindly wait patiently during this time. If "Finished looking for duplicates " appears at the end of both two files "./quality/dataset/JLeaks/all_method.log" and "./quality/dataset/DroidLeaks/all_method.log", which means the detections of duplication have done. Then run:_**
 
 ```
 cd ..
@@ -285,7 +285,7 @@ SpotBugs output directory is './evaluationTools/toolResult/output-spotbugs'. Inf
 ```
 python toolAnalysis.py
 ```
-you can see the results of each tool in the "Result" workbook of the "./evaluationTools/file/data-tool.xlsx" file. In addition, after the "toolAnalysis.py" file is completed, you can see the accuracy of each tool on the console.
+The results of each tool will displayed in the "Result" workbook in the "./evaluationTools/file/data-tool.xlsx" file. In addition, the accuracy of each tool will displayed on the console.
 
 
 ## Evaluation of ChatGPT
