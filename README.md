@@ -121,6 +121,7 @@ Based on [1] and the standardized data quality framework ISO/IEC 25012 [2], we o
 - tokenizers==0.9.4
 - pandas==1.1.5
 - scikit-learn==0.24.2
+- pygments == 2.14.0
 - near-duplicate-code-detector (see https://github.com/microsoft/near-duplicate-code-detector/tree/main)
 
 ### Uniqueness
