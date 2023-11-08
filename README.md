@@ -118,6 +118,7 @@ AoRClose        | Add or rewrite close
 Based on [1] and the standardized data quality framework ISO/IEC 25012 [2], we outline three data quality attributes: uniqueness, consistency, and currency. Allamanis [3], a code cloning detection tool, is employed.
 
 ### Requirements
+- Python==3.7.0
 - jsonlines==3.1.0
 - matplotlib==3.5.3
 - openpyxl==3.1.2
