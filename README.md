@@ -20,7 +20,7 @@
 ## General Introdution
 JLeaks is a resource leaks repository collected from real-world projects.
 
-Notably, JLeaks is a repository of resource leaks that facilitates in-depth researches and evaluation of defect-related algorithms.Each defect in Leaks includes four aspects key information: project information, defect information, code characteristics, and file information. 
+Notably, JLeaks is a repository of resource leaks that facilitates in-depth researches and evaluation of defect-related algorithms. Each defect in Leaks includes four aspects key information: project information, defect information, code characteristics, and file information. 
 
 ## Structure Description
 ```
