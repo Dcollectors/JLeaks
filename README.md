@@ -118,10 +118,16 @@ AoRClose        | Add or rewrite close
 Based on [1] and the standardized data quality framework ISO/IEC 25012 [2], we outline three data quality attributes: uniqueness, consistency, and currency. Allamanis [3], a code cloning detection tool, is employed.
 
 ### Requirements
+- jsonlines==3.1.0
+- matplotlib==3.5.3
+- openpyxl==3.1.2
 - tokenizers==0.9.4
 - pandas==1.1.5
 - scikit-learn==0.24.2
+- scipy==1.6.3
 - pygments == 2.14.0
+- sctokenizer==0.0.8
+- seaborn==0.9.0
 - near-duplicate-code-detector (see https://github.com/microsoft/near-duplicate-code-detector/tree/main)
 
 **NOTICE: Please try not to run *DuplicateCodeDetector.csproj* in parallel, due to https://github.com/microsoft/near-duplicate-code-detector/issues/5 . Please use the same version of Python to ensure that the jsonl files are consistent.**
