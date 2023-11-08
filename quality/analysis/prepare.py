@@ -28,7 +28,7 @@ if __name__ == '__main__':
             with open(file_path, 'r') as file_content:
                 content = file_content.read()
 
-            print(file_id)
+            #print(file_id)
             mask = df['ID'] == int(file_id)
             
             if mask.any():
