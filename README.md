@@ -91,21 +91,21 @@ is inter-procedural     | whether the resource leak is inter-procedural or not
 key variable name       | the name of the key variable that holds the system resource
 key variable location   | the location of key variable, such as "src/main/java/org/sql2o/Query.java:413"
 key variable attribute  | the attribute of key variable, which is one of **`anonymous variable`**, **`local variable`**, **`parameter`**, **`class variable`**, and **`instance variable`**
-defect file hash        | hash value of defect file, using which you can get the defect source file in JavaFile.zip, and the defect bytecode file in ClassFile.zip
-fix file hash           | hash value of fix file, using which you can get the fix source file in JavaFile.zip
+defect file hash        | hash value of defect file
+fix file hash           | hash value of fix file
 defect file url         | url to download defect file
 fix file url            | url to download fix file
 
 The root causes are displayed in the table below.
-Short  |  Description
+Cause  |  Description
 ------------- | -------------
 noCloseEPath  | No close on exception paths
 noCloseRPath  | No close on regular paths
-noCloseEPath  | Not provided close()
-noCloseEPath  | No close for all branches paths
+notProClose   | Not provided close()
+noCloseCPath  | No close for all branches paths
 
 The fix approaches are shown in the table below.
-Short  |  Description
+Fix Approaches  |  Description
 --------------- | ---------------
 try-with        | Use try-with-resource
 CloseInFinally  | Close in finally
