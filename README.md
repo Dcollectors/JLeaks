@@ -71,7 +71,7 @@ UTC of last modify      | UTC of last modification of the project
 \# of issues            | the number of issues of the project
 \# of forks             | the number of forks of the project
 \# of releases          | the number of releases of the project
-\# of contributes       | the number of contributes of the project
+\# of contributors       | the number of contributes of the project
 \# of requests          | the number of requests of the project
 about                   | the description of the project
 commit url              | the commit URL, which includes the message, defect code, and patch code
@@ -115,7 +115,7 @@ AoRClose        | Add or rewrite close
 
 ## Quality of JLeaks
 
-Based on [1] and the standardized data quality framework ISO/IEC 25012 [2], we outline three data quality attributes: uniqueness, consistency, and currency. Allamanis [3], a code cloning detection tool, is employed.
+Based on [1] and the standardized data quality framework ISO/IEC 25012 [2], we compare JLeaks and DroidLeaks [4] using three data quality attributes: uniqueness, consistency, and currency. Allamanis [3], a code cloning detection tool, is employed.
 
 ### Requirements
 - Python==3.7.0
