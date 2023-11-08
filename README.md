@@ -115,7 +115,7 @@ AoRClose        | Add or rewrite close
 
 ## Quality of JLeaks
 
-Based on [1] and the standardized data quality framework ISO/IEC 25012 [2], we compare JLeaks and DroidLeaks [4] using three data quality attributes: uniqueness, consistency, and currency. Allamanis [3], a code cloning detection tool, is employed.
+Based on [1] and the standardized data quality framework ISO/IEC 25012 [2], we compare JLeaks and DroidLeaks [4] using three data quality attributes: uniqueness, consistency, and currentness. Allamanis [3], a code cloning detection tool, is employed.
 
 ### Requirements
 - Python==3.7.0
@@ -148,7 +148,7 @@ python toJsonl.py -d JLeaks -f bug
 python toJsonl.py -d DroidLeaks -f bug
 ```
 
-#### 2. Analysis data:
+#### 2. Analyse data:
 ```
 cd DuplicateCodeDetector
 
@@ -198,7 +198,7 @@ python toJsonl.py -d DroidLeaks -f all
 
 ```
 
-#### 2. Analysis data:
+#### 2. Analyse data:
 ```
 cd ./DuplicateCodeDetector
 
@@ -214,7 +214,7 @@ python analysis.py -d JLeaks -f consistency
 python analysis.py -d DroidLeaks -f consistency
 ```
 
-### Currency
+### Currentness
 Before starting, please make sure **`./quality/dataset/JLeaks/JLeaks_bug_method.zip`**, **`./quality/dataset/DroidLeaks/DroidLeaks_bug_method.zip`**, **`./quality/dataset/JLeaks/JLeaks.csv`** and **`./quality/dataset/DroidLeaks/DroidLeaks.csv`** exist.
 
 #### 1. Prepare data:
@@ -229,7 +229,7 @@ python prepare.py JLeaks
 python prepare.py DroidLeaks
 ```
 
-#### 2. Analysis data:
+#### 2. Analyse data:
 ```
 python currency.py prepare JLeaks
 python currency.py measure JLeaks
@@ -281,7 +281,7 @@ infer run -o {infer_output_dir}/{project_name} -- gradle build -w -x test --buil
 - {infer_maven_log_dir} is the log file generated when using Maven.
 - {infer_gradle_log_dir} is the log file generated during the Gradle build process.
 
-### Analysis tool detection results
+### Analyse tool detection results
 
 After running the tool to obtain the detection results, it is necessary to analyze and match the result file to determine whether it is consistent with the information we annotated, that is, whether the resource leak defect can be correctly detected in the method.
 
