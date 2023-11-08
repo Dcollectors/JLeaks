@@ -130,6 +130,7 @@ Based on [1] and the standardized data quality framework ISO/IEC 25012 [2], we c
 - sctokenizer==0.0.8
 - seaborn==0.9.0
 - near-duplicate-code-detector (see https://github.com/microsoft/near-duplicate-code-detector/tree/main)
+- .NET Core 2.1 or higher
 
 **NOTICE: Please try not to run *DuplicateCodeDetector.csproj* in parallel, due to https://github.com/microsoft/near-duplicate-code-detector/issues/5 . Please use the same version of Python to ensure that the jsonl files are consistent.**
 
