@@ -87,11 +87,11 @@ if __name__ == '__main__':
                 result = {}
                 result["filename"] = file_path
                 result["tokens"] = tokens
-
-                filename = str(index) + ".jsonl"
+                
+                filename = file.split('.')[0] + ".jsonl"
                 dest_path = os.path.join(json_path, filename)
-
-                with jsonlines.open(dest_path, mode="a") as json_file:
+                
+                with jsonlines.open(dest_path, mode="w") as json_file:
                     json_file.write(result)
                 index = index + 1
 
