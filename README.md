@@ -302,7 +302,7 @@ The results of each tool will displayed in the "Result" workbook in the "./evalu
 ## Evaluation of ChatGPT
 
 ### Prompt for commits classification ###
-We randomly select 100 commits and relabel them to determine their relevance to resources, creating the test set. The prompt is mainly composed of various elements, including a task description, resource explanation, typical scenario illustration, sample code fragments, and the expected output. The prompt is as follows:
+We randomly select 100 commits and relabel them to determine their relevance to resources, creating the test set. The prompt, which meets the Prompt Engineering Guide [8], composes various elements, including a task description, resource explanation, typical scenario illustration, sample code fragments, and the expected output. The prompt is as follows:
 ```
 You are an experienced Java developer. I will show you a code fragment, and you need to check whether the code is related to file, socket, database or thread operations. Your output should be a json which contains 1 field: result. The value of result can be 1 or 0. 1 means you are very certain that the code is related to to file, socket or thread operations, 0 means you are very certain that the code is NOT related to file, socket or thread operations. I will give 10 examples related to resource as follows:
 
@@ -341,3 +341,5 @@ You are an experienced Java developer. I will show you a code fragment, and you 
 [6] FaceBook. 2023. GitHub - facebook/infer: A static analyzer for Java, C, C++, and Objective-C. https://github.com/facebook/infer. (Accessed on 03/30/2023).
 
 [7] SpotBugs. 2023. SpotBugs. https://spotbugs.github.io/. (Accessed on 03/30/2023).
+
+[8] Jie Wang, Wensheng Dou, Yu Gao, Chushu Gao, Feng Qin, Kang Yin, Jun Wei: A comprehensive study on real world concurrency bugs in Node.js. ASE 2017: 520-531
