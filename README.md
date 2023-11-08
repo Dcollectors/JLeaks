@@ -97,7 +97,7 @@ defect file url         | url to download defect file
 fix file url            | url to download fix file
 
 The root causes are displayed in the table below.
-Cause  |  Description
+Causes  |  Description
 ------------- | -------------
 noCloseEPath  | No close on exception paths
 noCloseRPath  | No close on regular paths
@@ -107,7 +107,7 @@ noCloseCPath  | No close for all branches paths
 The fix approaches are shown in the table below.
 Fix Approaches  |  Description
 --------------- | ---------------
-try-with        | Use try-with-resource
+try-with        | Use try-with-resources
 CloseInFinally  | Close in finally
 CloseOnEPath    | Close on exception paths
 CloseOnRPath    | Close on regular paths
@@ -157,7 +157,7 @@ nohup dotnet run DuplicateCodeDetector.csproj --key-jaccard-threshold=0.7 --jacc
 nohup dotnet run DuplicateCodeDetector.csproj --key-jaccard-threshold=0.7 --jaccard-threshold=0.7 --dir=../../dataset/DroidLeaks/bug_method_gz > ../../dataset/DroidLeaks/uniqueness_method.log 2>&1 &
 ```
 
-**_Notably, this process will take several minutes, possibly dozens. Kindly wait patiently during this time. if "Finished looking for duplicates " appears at the end of both two files "./quality/dataset/JLeaks/uniqueness_method.log" and "./quality/dataset/DroidLeaks/uniqueness_method.log", which means the detections of duplication have done. Then run:_**
+**_Notably, this process will take several minutes, possibly dozens. Kindly wait patiently during this time. if "Finished looking for duplicates " appears at the end of both two files "./quality/dataset/JLeaks/uniqueness_method.log" and "./quality/dataset/DroidLeaks/uniqueness_method.log", it means the detections of duplication have done. Then run:_**
 
 ```
 cd ..
@@ -206,7 +206,7 @@ nohup dotnet run DuplicateCodeDetector.csproj --key-jaccard-threshold=0.95 --jac
 
 nohup dotnet run DuplicateCodeDetector.csproj --key-jaccard-threshold=0.95 --jaccard-threshold=0.95 --dir=../../dataset/DroidLeaks/all_method_gz > ../../dataset/DroidLeaks/all_method.log 2>&1 &
 ```
-**_Notably, this process will take several minutes, possibly dozens. Kindly wait patiently during this time. If "Finished looking for duplicates " appears at the end of both two files "./quality/dataset/JLeaks/all_method.log" and "./quality/dataset/DroidLeaks/all_method.log", which means the detections of duplication have done. Then run:_**
+**_Notably, this process will take several minutes, possibly dozens. Kindly wait patiently during this time. If "Finished looking for duplicates " appears at the end of both two files "./quality/dataset/JLeaks/all_method.log" and "./quality/dataset/DroidLeaks/all_method.log", it means the detections of duplication have done. Then run:_**
 
 ```
 cd ..
