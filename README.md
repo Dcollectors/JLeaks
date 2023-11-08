@@ -124,6 +124,8 @@ Based on [1] and the standardized data quality framework ISO/IEC 25012 [2], we o
 - pygments == 2.14.0
 - near-duplicate-code-detector (see https://github.com/microsoft/near-duplicate-code-detector/tree/main)
 
+**__NOTICE: Please try not to run *DuplicateCodeDetector.csproj* in parallel, due to https://github.com/microsoft/near-duplicate-code-detector/issues/5 . Please use the same version of Python to ensure that the jsonl files are consistent. _**
+
 ### Uniqueness
 Before starting, please make sure **`./quality/dataset/DroidLeaks/DroidLeaks_bug_method.zip`** and **`./quality/dataset/JLeaks/JLeaks_bug_method.zip`** exist.
 
