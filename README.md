@@ -35,6 +35,41 @@ Notably, JLeaks is a repository of resource leaks that facilitates in-depth rese
 │   ├─ analysis
 │   │  ├─ DuplicateCodeDetector    // Clone detection tool
 │   │  ├─ analysis.py         
+│   │  ├─ currency.py         # JLeaks: A Featured Resource Leak Repository Collected From Hundreds of Open-Source Java Projects
+
+- [General Introdution](#general-introdution)
+- [Structure Description](#structure-description)
+- [Contents of JLeaks](#contents-of-jleaks)
+- [Quality of JLeaks](#quality-of-jleaks)
+  - [Requirements](#requirements)
+  - [Uniqueness](#uniqueness)
+  - [Consistency](#consistency)
+  - [Currentness](#currentness)
+- [Evaluation of defect detection tools using JLeaks](#evaluation-of-defect-detection-tools-using-jleaks)
+  - [Requirements](#requirements-1)
+  - [Run Tools](#run-tools)
+  - [Analysis tool detection results](#analysis-tool-detection-results)
+- [Evaluation of GPT-3.5](#evaluation-of-gpt-35)
+  - [Prompt for commits classification](#prompt-for-commits-classification)
+  - [Prompt for defect detection](#prompt-for-defect-detection)
+- [References](#references)
+
+## General Introdution
+JLeaks is a resource leaks repository collected from real-world projects which facilitates in-depth researches and evaluation of defect-related algorithms. Each defect in Leaks includes four aspects key information: project information, defect information, code characteristics, and file information. 
+
+## Structure Description
+```
+├─ JLeaksDataset                   // full data
+│  ├─ JLeaks.xlsx                  // detail information for each defect
+│  ├─ all_bug_method.zip           // defect methods
+│  └─ all_fix_method.zip           // fix methods
+│  └─ all_bug_files.zip            // defect files
+│  └─ all_fix_files.zip            // fix files
+│  └─ bug_bytecode_files.zip       // defect bytecode files
+└─ quality                         // code used to compute uniqueness, consistency and currentness for JLeaks and DroidLeaks
+│   ├─ analysis
+│   │  ├─ DuplicateCodeDetector    // clone detection tool
+│   │  ├─ analysis.py         
 │   │  ├─ currency.py         
 │   │  ├─ data.py
 │   │  ├─ prepare.py
@@ -48,9 +83,9 @@ Notably, JLeaks is a repository of resource leaks that facilitates in-depth rese
 │           ├─ JLeaks_bug_method.zip
 │           ├─ JLeaks_fix_method.zip
 │           ├─ JLeaks.csv
-└─ evaluationTools                // evaluate PMD, Infer and SpotBugs based on JLeaks
+└─ evaluationTools                // code used to evaluate PMD, Infer, and SpotBugs based on JLeaks
     ├─ file
-    │  ├─ data-tool.xlsx          // Save tool result for each defect
+    │  ├─ data-tool.xlsx          // save tool result for each defect
     │  ├─ pmd_resource_leak.xml   // the custom PMD rule file        
     │  ├─ spotbugs_filterFile.xml // the custom SpotBugs filter file      
     ├─ toolAnalysis.py            // analysis the results of defect detection tools
@@ -58,43 +93,43 @@ Notably, JLeaks is a repository of resource leaks that facilitates in-depth rese
 ```
 
 ## Contents of JLeaks
-To date, JLeaks contains **`1,094`** real-world resource leaks from 321 open-source Java projects. Detailed information about these defects can be found in the **`JLeaks.xlsx`**.
+So far, JLeaks contains **`1,094`** real-world resource leaks from 321 open-source Java projects. Detailed information about these defects can be found in the **`JLeaks.xlsx`**.
 
 Item  |  Description
 ----------------------- | -----------------------
 ID                      | defect ID
-projects                | project name follows the format of owner/repository in GitHub, for example, "aaberg/sql2o"
+projects                | Github project name in the format owner/repository (e.g., "aaberg/sql2o")
 \# of commits           | the number of version control commits for the project
 UTC of create           | UTC of the project creation
 UTC of last modify      | UTC of last modification of the project
-\# of stars             | the number of stars of the project
-\# of issues            | the number of issues of the project
-\# of forks             | the number of forks of the project
-\# of releases          | the number of releases of the project
-\# of contributors       | the number of contributes of the project
-\# of requests          | the number of requests of the project
-about                   | the description of the project
-commit url              | the commit URL, which includes the message, defect code, and patch code
+\# of stars             | the number of stars
+\# of issues            | the number of issues
+\# of forks             | the number of forks
+\# of releases          | the number of releases
+\# of contributors      | the number of contributes
+\# of requests          | the number of requests
+about                   | project description
+commit url              | the URL including the commit details, defect code, and patch code
 UTC of buggy commit     | UTC of defect code submission
 UTC of fix commit       | UTC of fix code submission
 start line              | the start line of defect method
 end line                | the end line of defect method
-defect method           | the location and name of defect method, such as "src/main/java/org/sql2o/Query.java:executeAndFetchFirst"
-change lines            | the change line between defect code and fix code, such as "src/main/java/org/sql2o/Query.java:@@ -271,151 +271,180 @@ "
-resource types          | the type of system resource, which is one of **`file`**, **`socket`**, and **`thread`**
+defect method           | the location and name of defect method (e.g., "src/main/java/org/sql2o/Query.java:executeAndFetchFirst")
+change lines            | the change line between defect code and fix code (e.g., "src/main/java/org/sql2o/Query.java:@@ -271,151 +271,180 @@")
+resource types          | the type of system resource (options: **`file`**, **`socket`**, and **`thread`**)
 root causes             | root causes of defect.
-fix approaches          | fix approaches of defect
-patch correction        | whether the patch is correct or not
+fix approaches          | approaches used to fix the defect
+patch correction        | indication of whether the patch is correct or not
 standard libraries      | standard libraries related to defects
 third-party libraries   | third-party libraries related to defects
-is inter-procedural     | whether the resource leak is inter-procedural or not
-key variable name       | the name of the key variable that holds the system resource
-key variable location   | the location of key variable, such as "src/main/java/org/sql2o/Query.java:413"
-key variable attribute  | the attribute of key variable, which is one of **`anonymous variable`**, **`local variable`**, **`parameter`**, **`class variable`**, and **`instance variable`**
-defect file hash        | hash value of defect file
-fix file hash           | hash value of fix file
-defect file url         | url to download defect file
-fix file url            | url to download fix file
+is inter-procedural     | whether the resource leak is inter-procedural
+key variable name       | the name of the key variable holding the system resource
+key variable location   | the location of key variable (e.g., "src/main/java/org/sql2o/Query.java:413")
+key variable attribute  | the attribute of key variable (options: **`anonymous variable`**, **`local variable`**, **`parameter`**, **`class variable`**, and **`instance variable`**) 
+defect file hash        | hash value of the defect file
+fix file hash           | hash value of the fix file
+defect file url         | url to download the defect file
+fix file url            | url to download the fix file
 
 The root causes are displayed in the table below.
 Causes  |  Description
@@ -115,7 +150,7 @@ AoRClose        | Add or rewrite close
 
 ## Quality of JLeaks
 
-Based on [1] and the standardized data quality framework ISO/IEC 25012 [2], we compare JLeaks and DroidLeaks [4] using three data quality attributes: uniqueness, consistency, and currentness. Allamanis [3], a code cloning detection tool, is employed.
+Based on [1] and the standardized data quality framework ISO/IEC 25012 [2], we compare JLeaks and DroidLeaks [4] using three data quality attributes: uniqueness, consistency, and currentness. Allamanis [3], a code cloning detection tool, has benn utilized.
 
 ### Requirements
 - Python==3.7.0
@@ -132,7 +167,7 @@ Based on [1] and the standardized data quality framework ISO/IEC 25012 [2], we c
 - near-duplicate-code-detector (see https://github.com/microsoft/near-duplicate-code-detector/tree/main)
 - .NET Core 2.1 or higher
 
-**NOTICE: Please try not to run *DuplicateCodeDetector.csproj* in parallel, due to https://github.com/microsoft/near-duplicate-code-detector/issues/5 . Please use the same version of Python to ensure that the jsonl files are consistent.**
+**`NOTICE: Please avoid running *DuplicateCodeDetector.csproj* in parallel, as indicated in https://github.com/microsoft/near-duplicate-code-detector/issues/5 . Additionally, please use the same Python versions to ensure that the jsonl files are consistent.`**
 
 ### Uniqueness
 Before starting, please make sure **`./quality/dataset/DroidLeaks/DroidLeaks_bug_method.zip`** and **`./quality/dataset/JLeaks/JLeaks_bug_method.zip`** exist.
@@ -158,7 +193,7 @@ nohup dotnet run DuplicateCodeDetector.csproj --key-jaccard-threshold=0.7 --jacc
 nohup dotnet run DuplicateCodeDetector.csproj --key-jaccard-threshold=0.7 --jaccard-threshold=0.7 --dir=../../dataset/DroidLeaks/bug_method_gz > ../../dataset/DroidLeaks/uniqueness_method.log 2>&1 &
 ```
 
-**_Notably, this process will take several minutes, possibly dozens. Kindly wait patiently during this time. if "Finished looking for duplicates " appears at the end of both two files "./quality/dataset/JLeaks/uniqueness_method.log" and "./quality/dataset/DroidLeaks/uniqueness_method.log", it means the detections of duplication have done. Then run:_**
+**`The above process may take a few minutes to complete. If "Finished looking for duplicates " appears at the end of both two files "./quality/dataset/JLeaks/uniqueness_method.log" and "./quality/dataset/DroidLeaks/uniqueness_method.log", it means the duplication detection is finished. Then run:`**
 
 ```
 cd ..
@@ -207,7 +242,7 @@ nohup dotnet run DuplicateCodeDetector.csproj --key-jaccard-threshold=0.95 --jac
 
 nohup dotnet run DuplicateCodeDetector.csproj --key-jaccard-threshold=0.95 --jaccard-threshold=0.95 --dir=../../dataset/DroidLeaks/all_method_gz > ../../dataset/DroidLeaks/all_method.log 2>&1 &
 ```
-**_Notably, this process will take several minutes, possibly dozens. Kindly wait patiently during this time. If "Finished looking for duplicates " appears at the end of both two files "./quality/dataset/JLeaks/all_method.log" and "./quality/dataset/DroidLeaks/all_method.log", it means the detections of duplication have done. Then run:_**
+**`The above process may take a few minutes to complete. If "Finished looking for duplicates " appears at the end of both two files "./quality/dataset/JLeaks/all_method.log" and "./quality/dataset/DroidLeaks/all_method.log", it means the duplication detection is finished. Then run:`**
 
 ```
 cd ..
@@ -284,7 +319,7 @@ infer run -o {infer_output_dir}/{project_name} -- gradle build -w -x test --buil
 
 ### Analyse tool detection results
 
-After running the tool to obtain the detection results, it is necessary to analyze and match the result file to determine whether it is consistent with the information we annotated, that is, whether the resource leak defect can be correctly detected in the method.
+After running the tool to obtain the detection results, it is necessary to analyze the result file and compare it with the information we annotated, to check whether the resource leak defect is correctly detected in the method.
 
 Before starting, please make sure **`./evaluationTools/toolResult.zip`** exists.
 ```
@@ -296,13 +331,13 @@ SpotBugs output directory is './evaluationTools/toolResult/output-spotbugs'. Inf
 ```
 python toolAnalysis.py
 ```
-The results of each tool will displayed in the "Result" workbook in the "./evaluationTools/file/data-tool.xlsx" file. In addition, the accuracy of each tool will displayed on the console.
+The results of each tool is in the "Result" workbook in the "./evaluationTools/file/data-tool.xlsx" file. In addition, the accuracy of each tool will be shown on the console.
 
 
 ## Evaluation of ChatGPT
 
 ### Prompt for commits classification ###
-We randomly select 100 commits and relabel them to determine their relevance to resources, creating the test set. The prompt, which meets the Prompt Engineering Guide [8], composes various elements, including a task description, resource explanation, typical scenario illustration, sample code fragments, and the expected output. The prompt is as follows:
+We randomly select 100 commits and relabel them to determine their relevance to resources. According to the Prompt Engineering Guide [8], the prompt contains a task description, resource explanation, typical scenario illustration, sample code fragments, and the expected output. The prompt is as follows::
 ```
 You are an experienced Java developer. I will show you a code fragment, and you need to check whether the code is related to file, socket, database or thread operations. Your output should be a json which contains 1 field: result. The value of result can be 1 or 0. 1 means you are very certain that the code is related to to file, socket or thread operations, 0 means you are very certain that the code is NOT related to file, socket or thread operations. I will give 10 examples related to resource as follows:
 
