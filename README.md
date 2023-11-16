@@ -22,7 +22,7 @@
 ## General Introdution
 JLeaks is a resource leaks repository collected from real-world projects which facilitates in-depth researches and evaluation of defect-related algorithms. Each defect in Leaks includes four aspects key information: project information, defect information, code characteristics, and file information. You can also access detailed information for each defect on our website at  **`https://presentation-of-j-leaks.vercel.app/`**.
 
-![](.\presentation.gif)
+![image](./presentation.gif)
 
 ## Repository Structure
 ```
