@@ -27,11 +27,11 @@ JLeaks is a resource leaks repository collected from real-world projects which f
 ```
 ├─ JLeaksDataset                   // full data
 │  ├─ JLeaks.xlsx                  // detail information for each defect
-│  ├─ all_bug_method.zip           // buggy methods
+│  ├─ all_bug_method.zip           // faulty methods
 │  └─ all_fix_method.zip           // fixed methods
-│  └─ all_bug_files.zip            // buggy files
+│  └─ all_bug_files.zip            // faulty files
 │  └─ all_fix_files.zip            // fixed files
-│  └─ bug_bytecode_files.zip       // buggy bytecode files
+│  └─ bug_bytecode_files.zip       // faulty bytecode files
 └─ quality                         // code used to compute uniqueness, consistency and currentness for JLeaks and DroidLeaks
 │   ├─ analysis
 │   │  ├─ DuplicateCodeDetector    // clone detection tool
