@@ -1,6 +1,8 @@
 # JLeaks: A Featured Resource Leak Repository Collected From Hundreds of Open-Source Java Projects
+JLeaks is a resource leaks repository collected from real-world projects which facilitates in-depth researches and evaluation of defect-related algorithms. Each defect in Leaks includes four aspects key information: project information, defect information, code characteristics, and file information. You can also access detailed information for each defect on our website at  *[**`https://presentation-of-j-leaks.vercel.app/`**](https://presentation-of-j-leaks.vercel.app/)*. For the best experience, we recommend using the Chrome browser.
 
-- [General Introdution](#general-introdution)
+![image](./presentation.gif)
+
 - [Repository Structure](#repository-structure)
 - [Contents of JLeaks](#contents-of-jleaks)
 - [How to use](#how-to-use)
@@ -19,20 +21,17 @@
 - [How to compile projects](#how-to-compile-projects)
 - [References](#references)
 
-## General Introdution
-JLeaks is a resource leaks repository collected from real-world projects which facilitates in-depth researches and evaluation of defect-related algorithms. Each defect in Leaks includes four aspects key information: project information, defect information, code characteristics, and file information. You can also access detailed information for each defect on our website at  *[**`https://presentation-of-j-leaks.vercel.app/`**](https://presentation-of-j-leaks.vercel.app/)*. For the best experience, we recommend using the Chrome browser.
 
-![image](./presentation.gif)
 
 ## Repository Structure
 ```
 ├─ JLeaksDataset                   // full data
 │  ├─ JLeaks.xlsx                  // detail information for each defect
-│  ├─ all_bug_method.zip           // buggy methods
+│  ├─ all_bug_method.zip           // faulty methods
 │  └─ all_fix_method.zip           // fixed methods
-│  └─ all_bug_files.zip            // buggy files
+│  └─ all_bug_files.zip            // faulty files
 │  └─ all_fix_files.zip            // fixed files
-│  └─ bug_bytecode_files.zip       // buggy bytecode files
+│  └─ bug_bytecode_files.zip       // faulty bytecode files
 └─ quality                         // code used to compute uniqueness, consistency and currentness for JLeaks and DroidLeaks
 │   ├─ analysis
 │   │  ├─ DuplicateCodeDetector    // clone detection tool
