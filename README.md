@@ -25,16 +25,6 @@ Item  |  Description
 ----------------------- | -----------------------
 ID                      | defect ID
 projects                | Github project name in the format owner/repository (e.g., "aaberg/sql2o")
-\# of commits           | the number of version control commits for the project
-UTC of create           | UTC of the project creation
-UTC of last modify      | UTC of last modification of the project
-\# of stars             | the number of stars
-\# of issues            | the number of issues
-\# of forks             | the number of forks
-\# of releases          | the number of releases
-\# of contributors      | the number of contributes
-\# of requests          | the number of requests
-about                   | project description
 commit url              | the URL including the commit details, defect code, and patch code
 UTC of buggy commit     | UTC of defect code submission
 UTC of fix commit       | UTC of fixed code submission
@@ -45,17 +35,13 @@ change lines            | the change line between defect code and fixed code (e.
 resource types          | the type of system resource (options: **`file`**, **`socket`**, and **`thread`**)
 root causes             | root causes of defect.
 fix approaches          | approaches used to fixed the defect
-patch correction        | indication of whether the patch is correct or not
+patch error?        | indication of whether the patch is correct or not
 standard libraries      | standard libraries related to defects
 third-party libraries   | third-party libraries related to defects
 is inter-procedural     | whether the resource leak is inter-procedural
 key variable name       | the name of the key variable holding the system resource
 key variable location   | the location of key variable (e.g., "src/main/java/org/sql2o/Query.java:413")
 key variable attribute  | the attribute of key variable (options: **`anonymous variable`**, **`local variable`**, **`parameter`**, **`class variable`**, and **`instance variable`**) 
-defect file hash        | hash value of the defect file
-fix file hash           | hash value of the fixed file
-defect file url         | url to download the defect file
-fix file url            | url to download the fixed file
 
 The root causes are displayed in the table below.
 Causes  |  Description
