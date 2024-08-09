@@ -10,11 +10,10 @@ JLeaks is a resource leaks repository collected from real-world projects which f
 ## Repository Structure
 ```
 ├─ JLeaksDataset                   // full data
-│  ├─ JLeaks.xlsx                  // detail information for each defect
-│  ├─ all_bug_method.zip           // faulty methods
-│  └─ all_fix_method.zip           // fixed methods
-│  └─ all_bug_files.zip            // faulty files
-│  └─ all_fix_files.zip            // fixed files
+│  ├─ bug_methods.zip           // faulty methods
+│  └─ fix_methods.zip           // fixed methods
+│  └─ bug_files.zip            // faulty files
+│  └─ files.zip            // fixed files
 │  └─ bug_bytecode_files.zip       // faulty bytecode files               
 ```
 
