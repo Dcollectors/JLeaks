@@ -18,7 +18,7 @@ JLeaks is a resource leaks repository collected from real-world projects which f
 ```
 
 ## Contents of JLeaks
-So far, JLeaks contains **`1,094`** real-world resource leaks from 321 open-source Java projects. Detailed information about these defects can be found in the **`JLeaks.xlsx`**.
+So far, JLeaks contains **`1,160`** real-world resource leaks from 321 open-source Java projects. Detailed information about these defects can be found in the **`JLeaks.xlsx`**.
 
 Item  |  Description
 ----------------------- | -----------------------
