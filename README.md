@@ -1,5 +1,5 @@
 # JLeaks: A Featured Resource Leak Repository Collected From Hundreds of Open-Source Java Projects
-JLeaks is a resource leaks repository collected from real-world projects which facilitates in-depth researches and evaluation of defect-related algorithms. Each defect in Leaks includes four aspects key information: project information, defect information, code characteristics, and file information. We will continuously update the repository as much as possible.
+JLeaks is a resource leaks repository collected from real-world projects which facilitates in-depth researches and evaluation of defect-related algorithms. Each defect in Leaks includes four aspects key information: project information, defect information, code characteristics, and file information. **We will continuously update the repository as much as possible.**
 
 - [Repository Structure](#repository-structure)
 - [Contents of JLeaks](#contents-of-jleaks)
@@ -18,7 +18,7 @@ JLeaks is a resource leaks repository collected from real-world projects which f
 ```
 
 ## Contents of JLeaks
-So far, JLeaks contains **`1,160`** real-world resource leaks from 321 open-source Java projects. Detailed information about these defects can be found in the **`JLeaks.xlsx`**.
+JLeaks V1 contains 1,094 cases. However, so far, JLeaks contains **`1,160`** real-world resource leaks from open-source Java projects. Detailed information about these defects can be found in the **`JLeaks.xlsx`**.
 
 Item  |  Description
 ----------------------- | -----------------------
