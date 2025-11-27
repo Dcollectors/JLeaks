@@ -18,7 +18,7 @@ JLeaks is a resource leaks repository collected from real-world projects which f
 ```
 
 ## Contents of JLeaks
-JLeaks V1 contains 1,094 cases. However, so far, JLeaks contains **`1,160`** real-world resource leaks from open-source Java projects. Detailed information about these defects can be found in the **`JLeaks.xlsx`**.
+So far, JLeaks contains **`1,460`** real-world resource leaks from open-source Java projects. Detailed information about these defects can be found in the **`JLeaks.xlsx`**.
 
 Item  |  Description
 ----------------------- | -----------------------
@@ -58,6 +58,12 @@ CloseInFinally  | Close in finally
 CloseOnEPath    | Close on exception paths
 CloseOnRPath    | Close on regular paths
 AoRClose        | Add or rewrite close
+
+
+## Development of JLeaks
+JLeaks V1 contains 1,094 cases.
+JLeaks V2 contains 1,160 cases.
+JLeaks V3 contains 1,460 cases.
 
 ## References
 [1] Roland Croft, Muhammad Ali Babar, and M. Mehdi Kholoosi. 2023. Data Quality for Software Vulnerability Datasets. In 45th IEEE/ACM International Conference on Software Engineering, ICSE 2023, Melbourne, Australia, May 14-20, 2023. IEEE, 21–133. https://doi.org/10.1109/ICSE48619.2023.00022
